@@ -5,6 +5,7 @@
         var days = new Dictionary<string, Action> {
             { "1", Day01.Run },
             { "2", Day02.Run },
+            { "3", Day03.Run },
         };
 
         // Run all days if no args
