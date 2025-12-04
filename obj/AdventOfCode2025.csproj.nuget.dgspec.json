@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\IslaSmyth\\OneDrive - Ember Technology\\Desktop\\AdventOfCode2025\\AdventOfCode2025.csproj": {}
+    "C:\\Users\\Isla Smyth\\Desktop\\adventofcode2025\\AdventOfCode2025.csproj": {}
   },
   "projects": {
-    "C:\\Users\\IslaSmyth\\OneDrive - Ember Technology\\Desktop\\AdventOfCode2025\\AdventOfCode2025.csproj": {
+    "C:\\Users\\Isla Smyth\\Desktop\\adventofcode2025\\AdventOfCode2025.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\IslaSmyth\\OneDrive - Ember Technology\\Desktop\\AdventOfCode2025\\AdventOfCode2025.csproj",
+        "projectUniqueName": "C:\\Users\\Isla Smyth\\Desktop\\adventofcode2025\\AdventOfCode2025.csproj",
         "projectName": "AdventOfCode2025",
-        "projectPath": "C:\\Users\\IslaSmyth\\OneDrive - Ember Technology\\Desktop\\AdventOfCode2025\\AdventOfCode2025.csproj",
-        "packagesPath": "C:\\Users\\IslaSmyth\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\IslaSmyth\\OneDrive - Ember Technology\\Desktop\\AdventOfCode2025\\obj\\",
+        "projectPath": "C:\\Users\\Isla Smyth\\Desktop\\adventofcode2025\\AdventOfCode2025.csproj",
+        "packagesPath": "C:\\Users\\Isla Smyth\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Isla Smyth\\Desktop\\adventofcode2025\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\IslaSmyth\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Isla Smyth\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
