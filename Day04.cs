@@ -103,7 +103,7 @@ class Grid
         if (nw != null) adjacent.Add((char)nw);
         if (se != null) adjacent.Add((char)se);
         if (sw != null) adjacent.Add((char)sw);
-        return adjacent.ToArray();
+        return [.. adjacent];
     }
 
     public char? N(int x, int y)
@@ -237,7 +237,7 @@ class Day04
                 var toChange = CheckAdjacent(grid, x, y);
                 toUpdate.AddRange(toChange);
             }
-            toUpdate = toUpdate.Distinct().ToList();
+            toUpdate = [.. toUpdate.Distinct()];
             count += toUpdate.Count;
             if (toUpdate.Count == 0)
             {
