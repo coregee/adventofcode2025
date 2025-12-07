@@ -5,7 +5,7 @@ class Day07
 {
     static BigInteger Part1()
     {
-        char[][] grid = [.. File.ReadAllLines("Day07-test.txt").Select(line => line.ToCharArray())];
+        char[][] grid = [.. File.ReadAllLines("Day07.txt").Select(line => line.ToCharArray())];
         int[] beams = [grid[0].IndexOf('S')];
 
         BigInteger count = 0;
