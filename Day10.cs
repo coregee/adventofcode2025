@@ -54,7 +54,7 @@ class Day10
 
     static long Part1()
     {
-        var machines = ParseInput("Day10.txt");
+        var machines = ParseInput("Day10-test.txt");
         long count = 0;
         foreach (var machine in machines)
         {
@@ -71,6 +71,10 @@ class Day10
         int nCol = machine.buttons.Count;
         int nRow = machine.joltages.Count;
         using var lp = LpSolve.make_lp(nRow, nCol);
+        for (int i = 0; i < nCol; i++)
+        {
+            lp.set_int(i + 1, true);
+        }
 
         const double ignored = 0;
         lp.set_minim();
@@ -88,9 +92,7 @@ class Day10
         lpsolve_return solve = lp.solve();
         if (solve == lpsolve_return.OPTIMAL)
         {
-            var results = new double[nCol];
-            lp.get_variables(results);
-            return (long)results.Sum();
+            return (long)Math.Round(lp.get_objective());
         }
         Console.WriteLine("please do not ever print this line");
         return long.MaxValue;
