@@ -2,139 +2,87 @@
   "version": 3,
   "targets": {
     "net10.0": {
-      "CSharpItertools/1.0.0": {
+      "LpSolveDotNet/4.1.0": {
         "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection": "6.0.0"
-        },
         "compile": {
-          "lib/netstandard2.1/CSharpItertools.dll": {}
+          "lib/netcoreapp3.0/LpSolveDotNet.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.1/CSharpItertools.dll": {}
+          "lib/netcoreapp3.0/LpSolveDotNet.dll": {
+            "related": ".xml"
+          }
         }
       },
-      "Microsoft.Extensions.DependencyInjection/6.0.0": {
+      "LpSolveDotNet.Native.win-x64/4.1.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0"
-        },
-        "compile": {
-          "lib/net6.0/Microsoft.Extensions.DependencyInjection.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/Microsoft.Extensions.DependencyInjection.dll": {
-            "related": ".xml"
-          }
+          "LpSolveDotNet": "4.1.0"
         },
         "build": {
-          "buildTransitive/netcoreapp3.1/_._": {}
-        }
-      },
-      "Microsoft.Extensions.DependencyInjection.Abstractions/6.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/netcoreapp3.1/_._": {}
+          "build/LpSolveDotNet.Native.win-x64.targets": {}
         }
       }
     }
   },
   "libraries": {
-    "CSharpItertools/1.0.0": {
-      "sha512": "AA4GrSe3/7txajz7/Jpe3G4Fj880WdZF5IuFfsRpu17DZzn0odX8Kb+MRlJpXvYZU1ExPj3+jJivHU1dFxnMbA==",
+    "LpSolveDotNet/4.1.0": {
+      "sha512": "YdfHxdlrMHaXsH1IwgPv1P9swPFeKjvlHtPEflZNiWxHH8B69N6yoh0I6pVbA0PSTGxr8JCKojUiCHGdi69JKw==",
       "type": "package",
-      "path": "csharpitertools/1.0.0",
+      "path": "lpsolvedotnet/4.1.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "README.md",
-        "csharpitertools.1.0.0.nupkg.sha512",
-        "csharpitertools.nuspec",
-        "lib/netstandard2.1/CSharpItertools.dll"
+        "lib/net20/LpSolveDotNet.dll",
+        "lib/net20/LpSolveDotNet.xml",
+        "lib/net471/LpSolveDotNet.dll",
+        "lib/net471/LpSolveDotNet.xml",
+        "lib/netcoreapp3.0/LpSolveDotNet.dll",
+        "lib/netcoreapp3.0/LpSolveDotNet.xml",
+        "lib/netstandard1.5/LpSolveDotNet.dll",
+        "lib/netstandard1.5/LpSolveDotNet.xml",
+        "lib/netstandard2.0/LpSolveDotNet.dll",
+        "lib/netstandard2.0/LpSolveDotNet.xml",
+        "lpsolvedotnet.4.1.0.nupkg.sha512",
+        "lpsolvedotnet.nuspec"
       ]
     },
-    "Microsoft.Extensions.DependencyInjection/6.0.0": {
-      "sha512": "k6PWQMuoBDGGHOQTtyois2u4AwyVcIwL2LaSLlTZQm2CYcJ1pxbt6jfAnpWmzENA/wfrYRI/X9DTLoUkE4AsLw==",
+    "LpSolveDotNet.Native.win-x64/4.1.0": {
+      "sha512": "UJAWvYOm3OPkkb1u5N9dPy4x1sAFndesyo8MGD/cuyik06BuJuH8go7vR3i65FOFrLY/MHC9F9oByuw1ezAYKg==",
       "type": "package",
-      "path": "microsoft.extensions.dependencyinjection/6.0.0",
+      "path": "lpsolvedotnet.native.win-x64/4.1.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.DependencyInjection.targets",
-        "buildTransitive/netcoreapp3.1/_._",
-        "lib/net461/Microsoft.Extensions.DependencyInjection.dll",
-        "lib/net461/Microsoft.Extensions.DependencyInjection.xml",
-        "lib/net6.0/Microsoft.Extensions.DependencyInjection.dll",
-        "lib/net6.0/Microsoft.Extensions.DependencyInjection.xml",
-        "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.dll",
-        "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.xml",
-        "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.dll",
-        "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.xml",
-        "microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",
-        "microsoft.extensions.dependencyinjection.nuspec",
-        "useSharedDesignerContext.txt"
-      ]
-    },
-    "Microsoft.Extensions.DependencyInjection.Abstractions/6.0.0": {
-      "sha512": "xlzi2IYREJH3/m6+lUrQlujzX8wDitm4QGnUu6kUXTQAWPuZY8i+ticFJbzfqaetLA6KR/rO6Ew/HuYD+bxifg==",
-      "type": "package",
-      "path": "microsoft.extensions.dependencyinjection.abstractions/6.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.DependencyInjection.Abstractions.targets",
-        "buildTransitive/netcoreapp3.1/_._",
-        "lib/net461/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
-        "lib/net461/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
-        "lib/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
-        "lib/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
-        "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
-        "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
-        "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
-        "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
-        "microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
-        "microsoft.extensions.dependencyinjection.abstractions.nuspec",
-        "useSharedDesignerContext.txt"
+        "README.md",
+        "build/LpSolveDotNet.Native.win-x64.targets",
+        "build/NativeBinaries/win-x64/lpsolve55.dll",
+        "lpsolvedotnet.native.win-x64.4.1.0.nupkg.sha512",
+        "lpsolvedotnet.native.win-x64.nuspec"
       ]
     }
   },
   "projectFileDependencyGroups": {
     "net10.0": [
-      "CSharpIterTools >= 1.0.0"
+      "LpSolveDotNet.Native.win-x64 >= 4.1.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Isla Smyth\\.nuget\\packages\\": {}
+    "C:\\Users\\IslaSmyth\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Isla Smyth\\Desktop\\adventofcode2025\\AdventOfCode2025.csproj",
+      "projectUniqueName": "C:\\Users\\IslaSmyth\\OneDrive - Ember Technology\\Desktop\\AdventOfCode2025\\AdventOfCode2025.csproj",
       "projectName": "AdventOfCode2025",
-      "projectPath": "C:\\Users\\Isla Smyth\\Desktop\\adventofcode2025\\AdventOfCode2025.csproj",
-      "packagesPath": "C:\\Users\\Isla Smyth\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Isla Smyth\\Desktop\\adventofcode2025\\obj\\",
+      "projectPath": "C:\\Users\\IslaSmyth\\OneDrive - Ember Technology\\Desktop\\AdventOfCode2025\\AdventOfCode2025.csproj",
+      "packagesPath": "C:\\Users\\IslaSmyth\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\IslaSmyth\\OneDrive - Ember Technology\\Desktop\\AdventOfCode2025\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Isla Smyth\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\IslaSmyth\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net10.0"
@@ -164,9 +112,9 @@
       "net10.0": {
         "targetAlias": "net10.0",
         "dependencies": {
-          "CSharpIterTools": {
+          "LpSolveDotNet.Native.win-x64": {
             "target": "Package",
-            "version": "[1.0.0, )"
+            "version": "[4.1.0, )"
           }
         },
         "imports": [

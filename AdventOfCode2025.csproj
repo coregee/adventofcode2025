@@ -8,7 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="CSharpItertools" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="LpSolveDotNet.Native.win-x64" Version="4.1.0" />
   </ItemGroup>
 
 </Project>

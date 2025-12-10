@@ -1,3 +1,4 @@
+using LpSolveDotNet;
 
 class Machine(bool[] lights, List<int[]> buttons, List<int> joltages)
 {
@@ -28,35 +29,72 @@ class Day10
         return machines;
     }
 
-    static long SolveMachine2(Machine machine)
+    static long SolveMachine1(Machine machine)
     {
-        var queue = new Queue<(int[] joltages, int presses)>();
-        queue.Enqueue((new int[machine.joltages.Count], 0));
-        var visited = new HashSet<string>();
+        var queue = new Queue<(bool[] lights, int presses)>();
+        queue.Enqueue((new bool[machine.lights.Length], 0));
+        var visited = new HashSet<bool[]>();
         while (queue.Count > 0)
         {
-            var (joltages, presses) = queue.Dequeue();
-            if (joltages.SequenceEqual(machine.joltages)) return presses;
+            var (lights, presses) = queue.Dequeue();
+            if (lights.SequenceEqual(machine.lights)) return presses;
             foreach (var button in machine.buttons)
             {
-                var nextJoltages = joltages.Select(j => j).ToArray();
-                foreach (var jIdx in button) nextJoltages[jIdx]++;
-                bool invalid = nextJoltages.Where((j, i) => j > machine.joltages[i]).Any();
-                if (!invalid)
+                var nextLights = lights.Select(l => l).ToArray();
+                foreach (var i in button) nextLights[i] = !nextLights[i];
+                if (!visited.Contains(nextLights))
                 {
-                    // I HATE THIS LANGUAGE SO MUCH
-                    string hash = string.Join(",", nextJoltages);
-                    if (!visited.Contains(hash))
-                    {
-                        visited.Add(hash);
-                        queue.Enqueue((nextJoltages, presses + 1));
-                    }
+                    visited.Add(nextLights);
+                    queue.Enqueue((nextLights, presses + 1));
                 }
             }
         }
         return long.MaxValue; //please do not get to here :(
     }
 
+    static long Part1()
+    {
+        var machines = ParseInput("Day10.txt");
+        long count = 0;
+        foreach (var machine in machines)
+        {
+            count += SolveMachine1(machine);
+        }
+        return count;
+    }
+
+    // all credit to reddit hints and this library
+    static long SolveMachine2(Machine machine)
+    {
+        LpSolve.Init();
+        // nJoltage constraints, nButton variables
+        int nCol = machine.buttons.Count;
+        int nRow = machine.joltages.Count;
+        using var lp = LpSolve.make_lp(nRow, nCol);
+
+        const double ignored = 0;
+        lp.set_minim();
+        lp.set_obj_fn([ignored, .. Enumerable.Repeat(1.0, nCol)]);
+
+        lp.set_add_rowmode(true);
+        for (int i = 0; i < nRow; i++)
+        {
+            var joltage = machine.joltages[i];
+            lp.add_constraint([ignored, .. machine.buttons.Select(b => b.Contains(i) ? 1.0 : 0.0)], lpsolve_constr_types.EQ, joltage);
+        }
+        lp.set_add_rowmode(false);
+
+        lp.set_verbose(lpsolve_verbosity.IMPORTANT);
+        lpsolve_return solve = lp.solve();
+        if (solve == lpsolve_return.OPTIMAL)
+        {
+            var results = new double[nCol];
+            lp.get_variables(results);
+            return (long)results.Sum();
+        }
+        Console.WriteLine("please do not ever print this line");
+        return long.MaxValue;
+    }
 
     static long Part2()
     {
@@ -72,7 +110,7 @@ class Day10
     public static void Run()
     {
         Console.WriteLine("Day 10 Solution -- Part 01:");
-        // Console.WriteLine(Part1());
+        //Console.WriteLine(Part1());
         Console.WriteLine("Day 10 Solution -- Part 02:");
         Console.WriteLine(Part2());
     }
