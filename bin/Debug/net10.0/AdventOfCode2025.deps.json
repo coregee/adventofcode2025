@@ -8,40 +8,23 @@
     ".NETCoreApp,Version=v10.0": {
       "AdventOfCode2025/1.0.0": {
         "dependencies": {
-          "CSharpItertools": "1.0.0"
+          "LpSolveDotNet.Native.win-x64": "4.1.0"
         },
         "runtime": {
           "AdventOfCode2025.dll": {}
         }
       },
-      "CSharpItertools/1.0.0": {
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection": "6.0.0"
-        },
+      "LpSolveDotNet/4.1.0": {
         "runtime": {
-          "lib/netstandard2.1/CSharpItertools.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
+          "lib/netcoreapp3.0/LpSolveDotNet.dll": {
+            "assemblyVersion": "4.1.0.0",
+            "fileVersion": "4.1.0.0"
           }
         }
       },
-      "Microsoft.Extensions.DependencyInjection/6.0.0": {
+      "LpSolveDotNet.Native.win-x64/4.1.0": {
         "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0"
-        },
-        "runtime": {
-          "lib/net6.0/Microsoft.Extensions.DependencyInjection.dll": {
-            "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.0.21.52210"
-          }
-        }
-      },
-      "Microsoft.Extensions.DependencyInjection.Abstractions/6.0.0": {
-        "runtime": {
-          "lib/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
-            "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.0.21.52210"
-          }
+          "LpSolveDotNet": "4.1.0"
         }
       }
     }
@@ -52,26 +35,19 @@
       "serviceable": false,
       "sha512": ""
     },
-    "CSharpItertools/1.0.0": {
+    "LpSolveDotNet/4.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-AA4GrSe3/7txajz7/Jpe3G4Fj880WdZF5IuFfsRpu17DZzn0odX8Kb+MRlJpXvYZU1ExPj3+jJivHU1dFxnMbA==",
-      "path": "csharpitertools/1.0.0",
-      "hashPath": "csharpitertools.1.0.0.nupkg.sha512"
+      "sha512": "sha512-YdfHxdlrMHaXsH1IwgPv1P9swPFeKjvlHtPEflZNiWxHH8B69N6yoh0I6pVbA0PSTGxr8JCKojUiCHGdi69JKw==",
+      "path": "lpsolvedotnet/4.1.0",
+      "hashPath": "lpsolvedotnet.4.1.0.nupkg.sha512"
     },
-    "Microsoft.Extensions.DependencyInjection/6.0.0": {
+    "LpSolveDotNet.Native.win-x64/4.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-k6PWQMuoBDGGHOQTtyois2u4AwyVcIwL2LaSLlTZQm2CYcJ1pxbt6jfAnpWmzENA/wfrYRI/X9DTLoUkE4AsLw==",
-      "path": "microsoft.extensions.dependencyinjection/6.0.0",
-      "hashPath": "microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512"
-    },
-    "Microsoft.Extensions.DependencyInjection.Abstractions/6.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-xlzi2IYREJH3/m6+lUrQlujzX8wDitm4QGnUu6kUXTQAWPuZY8i+ticFJbzfqaetLA6KR/rO6Ew/HuYD+bxifg==",
-      "path": "microsoft.extensions.dependencyinjection.abstractions/6.0.0",
-      "hashPath": "microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512"
+      "sha512": "sha512-UJAWvYOm3OPkkb1u5N9dPy4x1sAFndesyo8MGD/cuyik06BuJuH8go7vR3i65FOFrLY/MHC9F9oByuw1ezAYKg==",
+      "path": "lpsolvedotnet.native.win-x64/4.1.0",
+      "hashPath": "lpsolvedotnet.native.win-x64.4.1.0.nupkg.sha512"
     }
   }
 }
