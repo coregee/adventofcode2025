@@ -13,6 +13,7 @@
             { "8", Day08.Run },
             { "9", Day09.Run },
             { "10", Day10.Run },
+            { "11", Day11.Run }
         };
 
         // Run all days if no args
