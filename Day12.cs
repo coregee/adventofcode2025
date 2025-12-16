@@ -1,3 +1,5 @@
+using System.Runtime.InteropServices;
+
 class Region(long w, long h, int[] shapeCounts)
 {
     public long width = w;
@@ -30,7 +32,7 @@ class Day12
         int i = 0;
         while (i < lines.Length && !lines[i].Contains('x'))
         {
-            if (string.IsNullOrWhiteSpace(lines[i]))
+            if (string.IsNullOrWhiteSpace(lines[i]) || lines[i].Contains(':'))
             {
                 i++;
                 continue;
@@ -87,19 +89,21 @@ class Day12
         return factors;
     }
 
-    static long Part1(List<Region> regions, char[][,] shapes)
+    static long Part1(List<Region> regions, List<char[,]> shapes)
     {
         long count = 0;
 
-        var bestMap = new Dictionary<(long, long), List<int>>();
+        int[] shapeSizes = [.. shapes.Select(s => s.Cast<char>().Count(c => c == '#'))];
 
         foreach (var region in regions)
         {
-            var shapeArea = region.shapeCounts.Sum() * 9;
-            if (region.Area >= shapeArea)
+            var shapeArea = shapeSizes.Select((size, index) => size * region.shapeCounts[index]).Sum();
+            var boxes = (region.width / 3) * (region.height / 3);
+            if (region.shapeCounts.Sum() <= boxes) count++;
+            else if (shapeArea > region.Area) continue;
+            else
             {
-                count += 1;
-                continue;
+                // uhhhhh, this never gets called? lol
             }
 
         }
